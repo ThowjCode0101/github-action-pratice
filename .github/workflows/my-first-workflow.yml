@@ -1,19 +1,13 @@
-# This is a simple workflow for a python app
-
-name: SimpleExample
-
-on: [push]
-
-jobs:
-  example:
-    runs-on: ubuntu-latest
-    steps:
-
-    # Checkout
-    - uses: actions/checkout@v3
-
-    # Build
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    - run: python my_script.py
+name: 'Business Greetings'
+description: 'Offers professional greetings and timestamps them'
+inputs:
+  name:
+    description: 'Name of the person or team to greet'
+    required: true
+    default: 'Udacity Learner'
+outputs:
+  timestamp:
+    description: 'Time of greeting'
+runs:
+  using: 'node18'
+  main: 'index.js'
